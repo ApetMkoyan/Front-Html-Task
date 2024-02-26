@@ -1,0 +1,183 @@
+$background-color_1: rgb(29, 60, 86);
+$background-color_2: rgb(0, 0, 0);
+$background-color_3: rgb(4, 81, 149);
+$background-color_4: rgb(2, 36, 71);
+$background-color_5: black;
+$background-color_6: rgba(17, 24, 148, 0.8);
+$border-color_1: beige;
+
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $background-color_1;
+}
+
+.sidebar {
+    width: 200px;
+    height: 90vh;
+    background-color: $background-color_2;
+    border-radius: 20px;
+    border-color: $border-color_1;
+    padding: 30px;
+    transition: 1s;
+    border: 3px solid rgb(100, 99, 99);
+}
+
+.top {
+    position: relative;
+    top: 30px;
+    display: flex;
+    justify-content: start;
+    align-items: end;
+    gap: 1rem;
+    transition: opacity 1s;
+
+    span {
+        transition: opacity 1s;
+    }
+
+    button {
+        position: absolute;
+        top: 1px;
+        left: 210px;
+        border: none;
+        border-radius: 50px;
+        width: 40px;
+        height: 40px;
+        background-color: $background-color_1;
+        transition: 1s;
+    }
+}
+
+.logo {
+    position: relative;
+    top: 4px;
+    width: 30px;
+    height: 30px;
+}
+
+.routes {
+    position: relative;
+    padding-left: -10px;
+    top: 50px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 190px;
+    height: 50px;
+    transition: 1s;
+    margin-top: 10px;   
+    gap: 1rem;
+    cursor: pointer;
+    border-radius: 20px;
+
+    span {
+        transition: opacity 1.5s;
+    }
+
+    &:hover {
+        background-color: $background-color_4;
+    }
+}
+
+.routes.active {
+    background-color: $background-color_3;
+}
+
+.bottomRoutes {
+    position: relative;
+    bottom: -300px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 190px;
+    height: 50px;
+    transition: 0.5s linear;
+    padding-left: 15px;
+    margin-top: 10px;
+    gap: 1rem;
+    cursor: pointer;
+    border-radius: 20px;
+
+    span {
+        transition: opacity 1.5s;
+    }
+
+    &:hover {
+        background-color: $background-color_4;
+    }
+}
+
+.bottomRoutes.active {
+    background-color: $background-color_3;
+}
+
+.sidebar.closed {
+    width: 40px;
+    height: 90vh;
+    background-color: $background-color_2;
+    border-radius: 20px;
+    padding: 30px;
+    transition: 1.5s;
+
+    .logo {
+        left: 10px;
+        transition: 0.5s;
+    }
+
+    .top {
+        button {
+            left: 100px;
+            background-color: $background-color_5;
+            transition: left 1.2s;
+        }
+
+        span {
+            opacity: 0;
+            transition: opacity 1s, visibility 1s;
+            visibility: hidden;
+        }
+    }
+
+    .routes {
+        transition: 0.5s;
+        width: 30px;
+        padding-left: 15px;
+
+        span {
+            opacity: 0;
+            transition: opacity 1s, visibility 1s;
+            visibility: hidden;
+        }
+    }
+
+    .bottomRoutes {
+        transition: 1s;
+        width: 30px;
+
+        span {
+            opacity: 0;
+            transition: opacity 1s, visibility 1s;
+            visibility: hidden;
+        }
+    }
+
+    .tooltip {
+        position: absolute;
+        position: absolute;
+        background-color: $background-color_6;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px;
+        white-space: nowrap;
+        transition: 1s;
+    }
+
+    .icon {
+        z-index: 1;
+    }
+}
